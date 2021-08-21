@@ -12,4 +12,5 @@ OrderHandlerTypeImpl 注解OrderHandlerType的实现类，主要作用时重写�
 以便在使用OrderHandlerType作为Map的key时，能正确匹配到对应的OrderHandlerType实例
 
 OrderService 订单处理类
-
+初始化时会注入OrderHandler接口的所有实现类，以OrderHandlerType为key，OrderHandler的实现类为value，
+在真正处理订单时会根据OrderHandlerType注解的具体情况获取到对应的OrderHandler实现类，然后调用handle()方法处理订单
